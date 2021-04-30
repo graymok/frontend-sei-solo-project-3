@@ -32,7 +32,7 @@ Stretch features include admin/utilization view and user workstyle assessment/re
 
 
 ## Entity Relationship Diagram
-![alt text](./assets/wrkpoint-erd.png)
+![alt text](./assets/wrkpoint-erd-v2.png)
 
 
 ## Routes Inventory
