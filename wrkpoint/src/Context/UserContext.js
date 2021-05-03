@@ -6,7 +6,10 @@ const UserContext = createContext()
 const UserProvider = ({children}) => {
     const [user, setUser] = useState({
         id: '',
-        name: null
+        name: null,
+        email: '',
+        workstyle: '',
+        workstyleDetail: ''
     })
 
     const verifyUser = async () => {
@@ -20,8 +23,11 @@ const UserProvider = ({children}) => {
             })
             setUser({
                 ...user,
-                id: response.data.userId,
-                name: response.data.user.name
+                id: response.data.user.id,
+                name: response.data.user.name,
+                email: response.data.user.email,
+                workstyle: response.data.user.workstyle,
+                workstyleDetail: response.data.user.workstyleDetail
             })
         }
     }

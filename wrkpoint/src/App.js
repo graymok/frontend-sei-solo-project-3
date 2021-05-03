@@ -1,7 +1,7 @@
 import './App.css';
 import { UserContext } from './Context/UserContext'
-import { useContext, useState } from 'react'
-import { Route } from 'react-router-dom'
+import { useContext, useState, useEffect } from 'react'
+import { Route, Redirect } from 'react-router-dom'
 import NavBar from './Components/NavBar'
 import Landing from './Pages/Landing'
 import Registration from './Pages/Registration'
@@ -20,20 +20,49 @@ function App() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  useEffect(() => {
+    verifyUser()
+  }, [])
+
   return (
     <div className="main-container">
       <NavBar />
       <div className="body-container">
         <Route exact path='/' render={() => {
-          return <Landing />
+          if ( user.name !== null ) {
+            return <Redirect to='/dashboard' />
+          } else {
+            return <Landing />
+          }
         }} />
         <Route path='/login' render={() => {
-          return <Registration type={'Login'} email={email} setEmail={setEmail} password={password} setPassword={setPassword} />
+          if ( user.name !== null ) {
+            return <Redirect to='/dashboard' />
+          } else {
+            return <Registration type={'Login'} email={email} setEmail={setEmail} password={password} setPassword={setPassword} />
+          }          
         }} />
         <Route path='/register' render={() => {
-          return <Registration type={'Register'} name={name} setName={setName} email={email} setEmail={setEmail} password={password} setPassword={setPassword} />
+          if ( user.name !== null ) {
+            return <Redirect to='/dashboard' />
+          } else {
+            return <Registration type={'Register'} name={name} setName={setName} email={email} setEmail={setEmail} password={password} setPassword={setPassword} />            
+          }          
         }} />
-                      
+        <Route path='/dashboard' render={() => {
+          if ( user.name !== null ) {
+            return <Dashboard />
+          } else {
+            return <Redirect to='/' />
+          }          
+        }} />
+        <Route path='/spaces' render={() => {
+          if ( user.name !== null ) {
+            return <AllSpaces />
+          } else {
+            return <Redirect to='/' />            
+          }          
+        }} />
       </div>
     </div>
   );

@@ -23,6 +23,15 @@ const Registration = (props) => {
             password: props.password
         })
         console.log(response)
+        localStorage.setItem('userId', response.data.user.id)
+        setUser({
+            ...user,
+            id: response.data.user.id,
+            name: response.data.user.name,
+            email: response.data.user.email,
+            workstyle: response.data.user.workstyle,
+            workstyleDetail: response.data.user.workstyleDetail
+        })
     }
 
     const startQuiz = (e) => {
@@ -60,7 +69,7 @@ const Registration = (props) => {
             </div>            
             }
             { quizState === 'active' && 
-                <WorkstyleForm name={props.name} email={props.email} password={props.password} />
+                <WorkstyleForm name={props.name} email={props.email} password={props.password} setQuizState={setQuizState} />
             }
             <div className="registration-overlay"></div>
             <img className="registration-background" src="https://officesnapshots.com/wp-content/uploads/2020/02/gensler-offices-london-10.jpg" alt="office" />            

@@ -1,8 +1,12 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { UserContext } from '../Context/UserContext'
 
 
 const WorkstyleForm = (props) => {
+
+    const {userState} = useContext(UserContext)
+    const [user, setUser] = userState
 
     const [workType, setWorkType] = useState('')
     const [workVibe, setWorkVibe] = useState('')
@@ -10,6 +14,7 @@ const WorkstyleForm = (props) => {
     const handleRegister = (e) => {
         e.preventDefault(e)
         registerUser()
+        props.setQuizState(null)
     }
 
     const registerUser = async () => {
@@ -20,6 +25,15 @@ const WorkstyleForm = (props) => {
             workstyle: workType + workVibe
         })
         console.log(response)
+        localStorage.setItem('userId', response.data.user.id)
+        setUser({
+            ...user,
+            id: response.data.user.id,
+            name: response.data.user.name,
+            email: response.data.user.email,
+            workstyle: response.data.user.workstyle,
+            workstyleDetail: response.data.user.workstyleDetail
+        })
     }
 
 

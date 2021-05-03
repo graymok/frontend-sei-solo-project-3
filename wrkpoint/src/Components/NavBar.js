@@ -11,6 +11,29 @@ const NavBar = () => {
 
     return (
         <>
+            { user.name !== null ?
+            <nav className="nav-container">
+                <div className="nav-left">
+                    <NavLink className="nav-logo" activeClassName="nav-active" to='/spaces'>Wrkpoint</NavLink>
+                </div>
+                <div className="nav-right">
+                    <NavLink className="nav-link" activeClassName="nav-active" to='/spaces'>All Spaces</NavLink>
+                    <NavLink className="nav-link" activeClassName="nav-active" to='/dashboard'>My Dashboard</NavLink>
+                    <span className="nav-link-logout" onClick={() => {
+                        localStorage.removeItem('userId')
+                        setUser({
+                            ...user,
+                            id: '',
+                            name: null,
+                            email: '',
+                            workstyle: '',
+                            workstyleDetail: ''                            
+                        })
+                    }}>Logout</span>
+                    <span className="nav-side-margin"></span>
+                </div>
+            </nav>              
+            :
             <nav className="nav-container">
                 <div className="nav-left">
                     <NavLink className="nav-logo" activeClassName="nav-active" exact to='/'>Wrkpoint</NavLink>
@@ -20,7 +43,9 @@ const NavBar = () => {
                     <NavLink className="nav-link-button" activeClassName="nav-active-button" to='/register'>Get Started</NavLink>
                     <span className="nav-side-margin"></span>
                 </div>
-            </nav>
+            </nav>    
+            }
+
         </>    
     )
 }
