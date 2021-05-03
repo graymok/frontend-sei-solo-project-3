@@ -5,10 +5,9 @@ import { Route, Redirect } from 'react-router-dom'
 import NavBar from './Components/NavBar'
 import Landing from './Pages/Landing'
 import Registration from './Pages/Registration'
-
 import Dashboard from './Pages/Dashboard'
 import AllSpaces from './Pages/AllSpaces'
-import SpaceListing from './Pages/SpaceListing'
+import SingleSpace from './Pages/SingleSpace'
 
 
 function App() {
@@ -63,6 +62,13 @@ function App() {
             return <Redirect to='/' />            
           }          
         }} />
+        <Route path='/spaces/:id' render={(routingProps) => {
+          if ( user.name !== null ) {
+            return <SingleSpace id={routingProps.match.params.id} />
+          } else {
+            return <Redirect to='/' />            
+          }     
+        }} />        
       </div>
     </div>
   );
