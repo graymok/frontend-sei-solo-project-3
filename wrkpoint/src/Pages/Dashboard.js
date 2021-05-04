@@ -1,10 +1,26 @@
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { UserContext } from '../Context/UserContext'
+import axios from 'axios'
 
 const Dashboard = () => {
 
     const {userState} = useContext(UserContext)
     const [user, setUser] = userState
+
+    const [reservations, setReservations] = useState()
+
+    const getAllReservations = async () => {
+        let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/spaces/dashboard`, {
+            headers: {
+                Authorization: user.id
+            }
+        })
+        setReservations(response.data.reservations)
+    }
+
+    useEffect(() => {
+        getAllReservations()
+    }, [])
 
     return (
         <div className="dashboard-container">

@@ -10,9 +10,10 @@ const SingleSpace = (props) => {
     const [user, setUser] = userState
 
     const [date, setDate] = useState()
+    const [reserved, setReserved] = useState('')
 
     const getSingleSpace = async () => {
-        let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/spaces/${props.id}`)
+        let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/spaces/detail/${props.id}`)
         setSpace(response.data.space)
     }
 
@@ -29,7 +30,7 @@ const SingleSpace = (props) => {
                 Authorization: user.id
             }
         })
-        console.log(response)
+        setReserved(response.data.reserved)
     }
 
     const handleReserve = (e) => {
@@ -42,7 +43,7 @@ const SingleSpace = (props) => {
             { space.length === 0 ? 
             <div>Loading...</div>
             :
-            <SingleDetail space={space} user={user} setDate={setDate} handleReserve={handleReserve} />
+            <SingleDetail space={space} user={user} setDate={setDate} handleReserve={handleReserve} reserved={reserved} />
             }
         </div>
     )

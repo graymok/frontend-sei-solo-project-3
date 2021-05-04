@@ -27,6 +27,10 @@ const SingleDetail = (props) => {
                             <input type="date" id="date" onChange={(e) => {props.setDate(e.target.value)}}/>
                             <input className="input-button" type="submit" value="RESERVE" />
                         </form>
+                        { props.reserved === 'user' && <span className="single-reservations-outcome">You already have this day reserved. Please choose another day.</span> }
+                        { props.reserved === 'failure' && <span className="single-reservations-outcome">Another user has this day reserved. Please choose another day.</span> }
+                        { props.reserved === 'success' && <span className="single-reservations-outcome">Your reservation is complete.</span> }
+
                     
                 </div>
             </div>
