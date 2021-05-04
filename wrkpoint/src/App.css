@@ -520,16 +520,7 @@
   border-radius: 10px;
 }
 
-.single-header-workstyle-detail {
-  font-weight: 400;
-  color: hsl(230, 0%, 30%);
-  font-size: 16px;
-  top: 140px;
-  width: 450px;
-  text-align: center;
-  font-style: italic;
-  margin-bottom: 20px;
-}
+
 
 .single-reservations-header {
   position: absolute;
@@ -549,4 +540,33 @@
   color: hsl(230, 0%, 30%);
   font-weight: 700;
   font-size: 16px;
+}
+
+.single-header-capacity {
+  color: hsl(230, 0%, 15%);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.single-header-seats {
+  color: hsl(230, 0%, 35%);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.single-header-space-description {
+  font-weight: 400;
+  color: hsl(230, 0%, 30%);
+  font-size: 16px;
+  width: 450px;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.single-reservations-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
