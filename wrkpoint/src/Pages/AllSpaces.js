@@ -9,7 +9,6 @@ const AllSpaces = () => {
     const getAllSpaces = async () => {
         let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/spaces/all`)
         setSpaces(response.data.spaces)
-        console.log(response.data.spaces)
     }
 
     useEffect(() => {
@@ -21,8 +20,8 @@ const AllSpaces = () => {
         <div className="all-spaces-container">
             { spaces.length === 0 ?
             <div>Loading...</div>
-            :
-            <SpaceListing spaces={spaces} />
+            :  
+            <SpaceListing spaces={spaces} />  
             }
         </div>
     )

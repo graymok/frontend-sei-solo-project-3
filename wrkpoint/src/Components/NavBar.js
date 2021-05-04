@@ -14,7 +14,7 @@ const NavBar = () => {
             { user.name !== null ?
             <nav className="nav-container">
                 <div className="nav-left">
-                    <NavLink className="nav-logo" activeClassName="nav-active" to='/spaces'>Wrkpoint</NavLink>
+                    <NavLink className="nav-logo" to='/spaces'>Wrkpoint</NavLink>
                 </div>
                 <div className="nav-right">
                     <NavLink className="nav-link" activeClassName="nav-active" to='/spaces'>All Spaces</NavLink>
@@ -36,7 +36,7 @@ const NavBar = () => {
             :
             <nav className="nav-container">
                 <div className="nav-left">
-                    <NavLink className="nav-logo" activeClassName="nav-active" exact to='/'>Wrkpoint</NavLink>
+                    <NavLink className="nav-logo" exact to='/'>Wrkpoint</NavLink>
                 </div>
                 <div className="nav-right">
                     <NavLink className="nav-link" activeClassName="nav-active" to='/login'>Login</NavLink>

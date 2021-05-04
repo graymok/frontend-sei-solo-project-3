@@ -49,12 +49,12 @@ Stretch features include admin/utilization view and user workstyle assessment/re
 
 
 ## MVP Checklist
-1. [ ] Build frontend with minimal HTML & CSS
-2. [ ] Build backend with routes, controllers, and Postgres database
-3. [ ] Build user authentication
-4. [ ] Build work space listings
+1. [x] Build frontend with minimal HTML & CSS
+2. [x] Build backend with routes, controllers, and Postgres database
+3. [x] Build user authentication
+4. [x] Build work space listings
 5. [ ] Build work space reservation system
-6. [ ] Build user dashboard for user's reservations
+6. [x] Build user dashboard for user's reservations
 7. [ ] Build filter for reservation listing
 
 

@@ -55,7 +55,7 @@ function App() {
             return <Redirect to='/' />
           }          
         }} />
-        <Route path='/spaces' render={() => {
+        <Route exact path='/spaces' render={() => {
           if ( user.name !== null ) {
             return <AllSpaces />
           } else {

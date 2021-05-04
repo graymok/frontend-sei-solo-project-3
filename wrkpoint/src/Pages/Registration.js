@@ -1,6 +1,5 @@
 import { useState, useContext } from 'react'
 import { UserContext } from '../Context/UserContext'
-import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import WorkstyleForm from '../Components/WorkstyleForm'
 
