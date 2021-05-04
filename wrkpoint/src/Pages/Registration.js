@@ -21,7 +21,6 @@ const Registration = (props) => {
             email: props.email,
             password: props.password
         })
-        console.log(response)
         localStorage.setItem('userId', response.data.user.id)
         setUser({
             ...user,
