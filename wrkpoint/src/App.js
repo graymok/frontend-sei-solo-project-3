@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="main-container">
-      <NavBar />
+      <NavBar setName={setName} setEmail={setEmail} setPassword={setPassword} />
       <div className="body-container">
         <Route exact path='/' render={() => {
           if ( user.name !== null ) {

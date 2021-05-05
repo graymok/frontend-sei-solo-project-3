@@ -165,6 +165,39 @@
   text-align: center;
 }
 
+.form-radios input[type="radio"] {
+  display: none;
+}
+
+
+.form-radios label {
+  display: inline-block;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 95%);
+  border: 1px solid hsl(0, 0%, 70%);
+  margin: 5px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.form-radios label:hover {
+  background-color: hsl(230, 60%, 80%);
+  color: hsl(230, 60%, 40%);
+  font-weight: 700;
+  border: 1px solid hsl(230, 60%, 40%);
+}
+
+.form-radios input[type="radio"]:checked+label {
+  background-color: hsl(230, 60%, 80%);
+  color: hsl(230, 60%, 40%);
+  font-weight: 700;
+  border: 1px solid hsl(230, 60%, 40%);
+  box-shadow: 0 0 8px hsla(0, 0%, 60%, 0.73);
+  transform: scale(1.02, 1.02);
+}
+
 .workstyle-headline {
   font-weight: 700;
   color: hsl(230, 0%, 30%);
