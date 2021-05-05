@@ -357,17 +357,7 @@
   font-size: 16px;
 }
 
-.dashboard-reservations-list {
-  border: 1px solid hsl(0, 0%, 70%);
-  border-radius: 20px;
-  height: 1000px;
-  width: 800px;
-  position: relative;
-  top: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 .all-spaces-container {
   display: flex;
@@ -375,10 +365,6 @@
   align-items: center;
   top: 50px;
   position: relative;
-}
-
-.single-container {
-  height: 1000px;
 }
 
 .space-listing-nav {
@@ -523,12 +509,10 @@
   border-radius: 10px;
 }
 
-
-
 .single-reservations-header {
   position: absolute;
   z-index: 4;
-  height: 500px;
+  height: 200px;
   width: 740px;
   top: 320px;
   border: 1px solid hsl(0, 0%, 70%);
@@ -570,8 +554,39 @@
 
 .single-reservations-form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  padding: 20px;
+  padding-bottom: 10px;
+  width: 600px;
+  border-top: 1px solid hsl(0, 0%, 70%);
+}
+
+.input-button-res {
+  height: 30px;
+  background-color: hsl(230, 60%, 40%);
+  border: 1px solid hsl(230, 60%, 40%);
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  width: 100px;
+}
+
+.input-button-res:hover {
+  cursor: pointer;
+}
+
+.single-reservations-outcome {
+  margin-top: 20px;
+  font-weight: 700;
+  color: hsl(230, 60%, 40%);
+}
+
+.single-reservations-outcome-fail {
+  margin-top: 20px;
+  font-weight: 700;
+  color: hsl(230, 60%, 80%)
 }
 
 .space-listing-image-overlay-res {
@@ -589,5 +604,58 @@
   font-size: 24px;
   font-weight: 700;
   color: hsl(230, 0%, 15%);
-  background-color: hsla(0, 0%, 100%, 0.5);
+  background-color: hsla(0, 0%, 100%, 0.7);
+}
+
+.space-listing-container-res {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width: 600px;
+  margin: 15px;
+  border: 1px solid hsl(0, 0%, 70%);
+  border-radius: 20px;
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: 0 0 10px hsla(0, 0%, 50%, 0.73);
+}
+
+
+.dashboard-reservations-list {
+  border: 1px solid hsl(0, 0%, 70%);
+  border-radius: 20px;
+  width: 900px;
+  position: relative;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: inset 0 0 5px hsla(0, 0%, 70%, 0.73);
+  background-color: hsl(0, 0%, 95%);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.dashboard-reservations-none {
+  font-weight: 700;
+  font-style: italic;
+  color: hsl(230, 60%, 40%);
+}
+
+.space-listing-delete {
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 30px;
+  border: 1px solid hsl(230, 0%, 30%);
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.space-listing-delete:hover {
+  cursor: pointer;
+  border: 1px solid hsl(230, 60%, 40%);
+  background-color: hsl(230, 60%, 40%);
+  color: hsl(0, 0%, 98%);
+  font-weight: 700;
 }

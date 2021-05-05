@@ -6,7 +6,7 @@ import ReservedListing from '../Components/ReservedListing'
 const Dashboard = () => {
 
     const {userState} = useContext(UserContext)
-    const [user, setUser] = userState
+    const [user] = userState
 
     const [reservations, setReservations] = useState([])
 
@@ -23,7 +23,9 @@ const Dashboard = () => {
 
     useEffect(() => {
         getAllReservations()
+    // eslint-disable-next-line react-hooks/exhaustive-deps    
     }, [])
+
 
 
 
@@ -43,7 +45,12 @@ const Dashboard = () => {
             </div>
             <div className="dashboard-body">
                 <div className="dashboard-reservations-list">
-                    <ReservedListing reservations={reservations} />
+                    { reservations.length > 0 ? <ReservedListing reservations={reservations} getAllReservations={getAllReservations} /> :
+                        <div className="dashboard-reservations-none">
+                            You don't have any reservations.
+                        </div>
+                    }
+                    
                 </div>
             </div>
         </div>

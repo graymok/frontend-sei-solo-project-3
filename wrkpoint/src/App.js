@@ -13,7 +13,7 @@ import SingleSpace from './Pages/SingleSpace'
 function App() {
 
   const {userState, verifyUser} = useContext(UserContext)
-  const [user, setUser] = userState
+  const [user] = userState
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -21,6 +21,7 @@ function App() {
 
   useEffect(() => {
     verifyUser()
+  // eslint-disable-next-line react-hooks/exhaustive-deps  
   }, [])
 
   return (
