@@ -364,6 +364,9 @@
   width: 800px;
   position: relative;
   top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .all-spaces-container {
@@ -569,4 +572,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.space-listing-image-overlay-res {
+  width: 350px;
+  height: 200px;
+  position: absolute;
+  z-index: 4;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: hsl(230, 0%, 15%);
+  background-color: hsla(0, 0%, 100%, 0.5);
 }
